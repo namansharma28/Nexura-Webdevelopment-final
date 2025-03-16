@@ -12,7 +12,7 @@ const Homepage = () => {
   useEffect(() => {
     const video = document.getElementById('laptop-video');
     if (video) {
-      video.playbackRate = 2; // 
+      video.playbackRate = 0.75; // Slow down the video slightly
     }
   }, []);
 
@@ -53,7 +53,7 @@ const Homepage = () => {
                     loop 
                     playsInline
                   >
-                    <source src="/laptop_bg.mov" type="video/mp4" />
+                    <source src={import.meta.env.BASE_URL + 'laptop_bg.mov'} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                   <div className="video-overlay"></div>
