@@ -1,0 +1,62 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00e676;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00c853;
+}
+
+/* Laptop screen glow effect */
+@keyframes screenGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+  }
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
