@@ -125,11 +125,11 @@ const Homepage = () => {
         <div className="about-content">
           <h2>For Developers</h2>
           <p>
-            Codify.AI is designed specifically for developers who want to enhance their productivity and code quality.
+            Nexura is designed specifically for developers who want to enhance their productivity and code quality.
             Our AI-powered platform analyzes your coding patterns and provides intelligent suggestions.
           </p>
           <p>
-            Whether you're a seasoned developer or just starting out, Codify.AI adapts to your skill level
+            Whether you're a seasoned developer or just starting out, Nexura adapts to your skill level
             and helps you write better code faster.
           </p>
         </div>
@@ -206,15 +206,15 @@ const Homepage = () => {
           <div className="contact-info">
             <div className="info-item">
               <h3>Email</h3>
-              <p>info@codify.ai</p>
+              <p>info@nexura.com</p>
             </div>
             <div className="info-item">
               <h3>Support</h3>
-              <p>support@codify.ai</p>
+              <p>support@nexura.com</p>
             </div>
             <div className="info-item">
               <h3>GitHub</h3>
-              <p>github.com/codify-ai</p>
+              <p>github.com/nexura</p>
             </div>
           </div>
         </div>
@@ -224,7 +224,7 @@ const Homepage = () => {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <h2>Codify.AI</h2>
+            <h2>Nexura</h2>
             <p>Your AI partner in code creation</p>
           </div>
           <div className="footer-links">
@@ -259,7 +259,7 @@ const Homepage = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 Codify.AI. All rights reserved.</p>
+          <p>&copy; 2024 Nexura. All rights reserved.</p>
         </div>
       </footer>
     </div>
