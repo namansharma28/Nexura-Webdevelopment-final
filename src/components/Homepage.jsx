@@ -1,13 +1,49 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import '../assets/Homepage.css';
 import Switch from './LightMode';
+import CustomScrollbar from './CustomScrollbar';
+import Contact from './Contact';
 
 const Homepage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const laptopContainerRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isFullyScrolled, setIsFullyScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Function to handle scroll animation
+  const handleScroll = () => {
+    if (!laptopContainerRef.current) return;
+    
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const laptopElement = laptopContainerRef.current;
+    const laptopRect = laptopElement.getBoundingClientRect();
+    
+    // Calculate how much of the laptop is visible in the viewport
+    const visibleHeight = Math.min(
+      windowHeight,
+      laptopRect.bottom
+    ) - Math.max(0, laptopRect.top);
+    
+    // Calculate progress based on visibility and scroll position
+    const maxScroll = windowHeight * 0.6; // Adjust this value to control zoom speed
+    const progress = Math.min(Math.max(scrollPosition / maxScroll, 0), 1);
+    
+    setScrollProgress(progress);
+    setIsFullyScrolled(progress >= 0.95);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    // Initial calculation
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
 
   // Function to handle video loading
   useEffect(() => {
@@ -17,9 +53,44 @@ const Homepage = () => {
     }
   }, []);
 
+  const laptopStyle = {
+    transform: `
+      perspective(2000px)
+      rotateX(${15 - (scrollProgress * 15)}deg)
+      scale(${0.8 + scrollProgress * 0.8})
+      translateY(${scrollProgress * -20}vh)
+    `,
+    transition: 'transform 0.3s ease-out'
+  };
+
+  const screenStyle = {
+    transform: `translateY(${scrollProgress * -2}%)`,
+    borderRadius: `${20 - (scrollProgress * 20)}px ${20 - (scrollProgress * 20)}px 0 0`,
+    transition: 'transform 0.3s ease-out, border-radius 0.3s ease-out'
+  };
+
+  const contentStyle = {
+    opacity: isFullyScrolled ? 1 : 0,
+    visibility: isFullyScrolled ? 'visible' : 'hidden',
+    transition: 'opacity 0.5s ease-out, visibility 0.5s ease-out',
+    marginTop: '100vh'
+  };
+
+  const progressBarStyle = {
+    width: `${Math.min(scrollProgress * 100, 100)}%`,
+    transition: 'width 0.1s ease-out'
+  };
+
   return (
     <div className="homepage">
-      {/* Navigation Bar */}
+      <CustomScrollbar />
+      {/* Scroll Progress Indicator */}
+      <div className="scroll-progress-container">
+        <div className="scroll-progress-bar" style={progressBarStyle}></div>
+      </div>
+      
+      {/* Navigation Bar - Commented out as requested */}
+      {/* 
       <nav className="navbar">
         <div className="logo">
           <h1>Nexura.Code</h1>
@@ -39,12 +110,13 @@ const Homepage = () => {
           <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
         </div>
       </nav>
+      */}
 
       {/* Hero Section */}
       <section id="home" className="hero">
-        <div className="laptop-container">
+        <div className="laptop-container" ref={laptopContainerRef} style={laptopStyle}>
           <div className="laptop-frame">
-            <div className="laptop-screen">
+            <div className="laptop-screen" style={screenStyle}>
               <div className="laptop-content">
                 {/* Video Background */}
                 <div className="video-background">
@@ -92,6 +164,12 @@ const Homepage = () => {
             </div>
             <div className="laptop-base"></div>
           </div>
+        </div>
+        
+        {/* Scroll Down Indicator */}
+        <div className={`scroll-down-indicator ${scrollProgress > 0.1 ? 'fade-out' : ''}`}>
+          <div className="scroll-arrow"></div>
+          <div className="scroll-text">Scroll to Zoom</div>
         </div>
       </section>
 
@@ -184,41 +262,8 @@ const Homepage = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="contact">
-        <h2>Get In Touch</h2>
-        <div className="contact-container">
-          <form className="contact-form">
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" placeholder="Your Name" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" placeholder="Your Email" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea id="message" placeholder="Your Message"></textarea>
-            </div>
-            <button type="submit" className="submit-btn">Send Message</button>
-          </form>
-          <div className="contact-info">
-            <div className="info-item">
-              <h3>Email</h3>
-              <p>info@nexura.com</p>
-            </div>
-            <div className="info-item">
-              <h3>Support</h3>
-              <p>support@nexura.com</p>
-            </div>
-            <div className="info-item">
-              <h3>GitHub</h3>
-              <p>github.com/nexura</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact Section - Removed built-in contact section */}
+      <Contact />
 
       {/* Footer */}
       <footer className="footer">

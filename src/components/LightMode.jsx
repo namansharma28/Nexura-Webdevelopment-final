@@ -6,20 +6,21 @@ const Switch = () => {
     const [showPopup, setShowPopup] = useState(false);
 
     const toggleSwitch = () => {
-        if (!isDark) {
-            // If switching to Light Mode, first revert back to Dark Mode
+        // First move to light mode
+        setIsDark(false);
+        
+        // After a short delay, move back to dark mode
+        setTimeout(() => {
             setIsDark(true);
-
+            
             // Show the popup message
             setShowPopup(true);
-
+            
             // Hide the popup after 3 seconds
             setTimeout(() => {
                 setShowPopup(false);
             }, 3000);
-        } else {
-            setIsDark(false);
-        }
+        }, 500); // Wait 500ms before switching back
     };
 
     return (
