@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../assets/Homepage.css';
+import Switch from './LightMode';
 
 const Homepage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,14 +22,15 @@ const Homepage = () => {
       {/* Navigation Bar */}
       <nav className="navbar">
         <div className="logo">
-          <h1>Nexura</h1>
+          <h1>Nexura.Code</h1>
         </div>
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
           <ul>
-            <li><a href="#product">Home</a></li>
+           <li> <a href="#product" className='hover-text'>Home</a></li>
             <li><a href="#features">Projects</a></li>
             <li><a href="#open-source">Team</a></li>
             <li><a href="#pricing">Contact us</a></li>
+            <Switch></Switch>
           </ul>
         </div>
         <div className="hamburger" onClick={toggleMenu}>
@@ -69,13 +71,13 @@ const Homepage = () => {
                 <div className="laptop-body">
                   <div className="hero-content">
                     <h1>
-                      <span>&lt; WORK WITH</span>
-                      YOUR CODE
-                      <span>CONFIDENTLY &gt;</span>
+                      <span>&lt; Nexura &gt;</span>
+                      Error 404:
+                      <span>Limits Not Found </span>
                     </h1>
-                    <p>Allow AI to become your partner in code creation.</p>
+                    <p>Turning caffeine into code and ideas into impact</p>
                     <div className="cta-buttons">
-                      <button className="primary-btn">TRY NOW</button>
+                      <button className="primary-btn">Learn More</button>
                     </div>
                   </div>
                   <div className="laptop-metrics">
@@ -95,27 +97,27 @@ const Homepage = () => {
 
       {/* Features Section */}
       <section id="features" className="features">
-        <h2>Features</h2>
+        <h2>WHY US?</h2>
         <div className="features-container">
           <div className="feature-card">
             <div className="feature-icon">🚀</div>
-            <h3>AI Code Assistance</h3>
-            <p>Get intelligent code suggestions and completions as you type.</p>
+            <h3>Mentorship That Matters</h3>
+            <p>Learn from experienced developers who guide you through every challenge.</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">🛡️</div>
-            <h3>Code Security</h3>
-            <p>Identify vulnerabilities and security issues in your code.</p>
+            <div className="feature-icon">💡</div>
+            <h3>Hands-On Experience</h3>
+            <p>Build real-world projects, join hackathons, and go beyond just theory.</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">📱</div>
-            <h3>Cross-Platform</h3>
-            <p>Works seamlessly across all major operating systems and IDEs.</p>
+            <div className="feature-icon">🌍</div>
+            <h3>Community & Collaboration</h3>
+            <p>Connect, code, and create with like-minded tech enthusiasts.</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">⚙️</div>
-            <h3>Customizable</h3>
-            <p>Tailor the AI to understand your coding style and preferences.</p>
+            <div className="feature-icon">🤝</div>
+            <h3>Trust & Reliability</h3>
+            <p>Whether for college projects or professional freelancing, we prioritize transparency, security, and quality in every project.</p>
           </div>
         </div>
       </section>
@@ -123,14 +125,12 @@ const Homepage = () => {
       {/* About Section */}
       <section id="about" className="about">
         <div className="about-content">
-          <h2>For Developers</h2>
+          <h2>For GEEKS <span className='small'>(Developers)</span></h2>
           <p>
-            Nexura is designed specifically for developers who want to enhance their productivity and code quality.
-            Our AI-powered platform analyzes your coding patterns and provides intelligent suggestions.
+          Whether you're a frontend fanatic, a backend wizard, or a full-stack explorer, Nexura is your playground to build, learn, and innovate. 
           </p>
           <p>
-            Whether you're a seasoned developer or just starting out, Nexura adapts to your skill level
-            and helps you write better code faster.
+          Work on real-world projects, collaborate with fellow developers, and push your coding skills to the next level. Plus, with our dedicated UI/UX team, your creations won't just work seamlessly—they'll look stunning too. Join us and turn your ideas into interactive experiences!
           </p>
         </div>
         <div className="about-image">
@@ -140,30 +140,30 @@ const Homepage = () => {
 
       {/* Services Section */}
       <section id="open-source" className="services">
-        <h2>Open Source</h2>
+        <h2>Our Niche</h2>
         <div className="services-container">
           <div className="service-card">
-            <h3>Community Driven</h3>
-            <p>Join our growing community of developers contributing to the platform.</p>
+            <h3>MERN Stack Development</h3>
+            <p>Build dynamic, full-stack web applications using MongoDB, Express, React, and Node.js.</p>
           </div>
           <div className="service-card">
-            <h3>Transparent Development</h3>
-            <p>All our code is open source and available for review and contribution.</p>
+            <h3>SQL & Database Management</h3>
+            <p>Master relational databases to store, manage, and optimize data efficiently.</p>
           </div>
           <div className="service-card">
-            <h3>Regular Updates</h3>
-            <p>Benefit from continuous improvements and new features.</p>
+            <h3>UI/UX Design</h3>
+            <p>Create visually stunning and user-friendly interfaces with our dedicated design team.</p>
           </div>
           <div className="service-card">
-            <h3>Extensible</h3>
-            <p>Build your own plugins and extensions to enhance functionality.</p>
+            <h3>Scalable & Modern Web Solutions</h3>
+            <p>Develop high-performance applications that are fast, responsive, and future-ready.</p>
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
       <section id="pricing" className="services">
-        <h2>Pricing</h2>
+        <h2> Our Brag-Worthy Projects</h2>
         <div className="services-container">
           <div className="service-card">
             <h3>Free Tier</h3>
@@ -232,18 +232,18 @@ const Homepage = () => {
               <h3>Navigation</h3>
               <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#open-source">Open Source</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#features">Projects</a></li>
+                <li><a href="#open-source">About Us</a></li>
+                <li><a href="#pricing">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
             <div className="footer-section">
-              <h3>Resources</h3>
+              <h3>Quick links</h3>
               <ul>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">API</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="#">Main Website</a></li>
+                <li><a href="#">Join Us</a></li>
+                <li><a href="#">UI/UX Team</a></li>
                 <li><a href="#">Community</a></li>
               </ul>
             </div>
@@ -251,8 +251,7 @@ const Homepage = () => {
               <h3>Connect</h3>
               <ul className="social-links">
                 <li><a href="#">GitHub</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Discord</a></li>
+                <li><a href="#">Instagram</a></li>
                 <li><a href="#">LinkedIn</a></li>
               </ul>
             </div>

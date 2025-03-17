@@ -696,6 +696,9 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 300px;
   text-align: left;
 }
+.small{
+  font-size: smaller;
+}
 
 .form-group {
   margin-bottom: 20px;
@@ -874,6 +877,47 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
   font-size: 14px;
 }
+
+
+
+.hover-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Add new text when hovered using ::after */
+.hover-text::after {
+  content: "127.0.0.1";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #00e676;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hide original text and show new text on hover */
+.hover-text:hover {
+  color: transparent !important;
+  
+}
+
+.hover-text:hover::after {
+  opacity: 1; /* Shows the new text */
+}
+
+
+
+
+
+
+
+
 
 /* Responsive Design */
 @media (max-width: 992px) {
