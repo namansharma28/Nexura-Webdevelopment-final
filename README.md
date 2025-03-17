@@ -1,67 +1,59 @@
-# Nexura Homepage
+# Nexura Portfolio Website
 
-A modern, responsive homepage for Nexura built with React and Vite.
+A modern portfolio website built with React and Vite.
 
 ## Features
 
-- Responsive design that works on all devices
-- Modern UI with smooth animations
-- Interactive components
+- Responsive design
+- Modern UI/UX
+- Custom scrollbar
 - Contact form
-- Mobile-friendly navigation
+- Smooth animations
 
-## Screenshots
+## Getting Started
 
-(Screenshots will be added after deployment)
+### Prerequisites
 
-## Installation
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
 
 1. Clone the repository
-2. Navigate to the project directory
-3. Install dependencies:
 
 ```bash
+git clone https://github.com/prakharsudele/Nexura_portfolio_2.git
+```
+
+2. Install dependencies
+
+```bash
+cd Nexura_portfolio_2
 npm install
 ```
 
-## Development
-
-To start the development server:
+3. Start the development server
 
 ```bash
 npm run dev
 ```
 
-This will start the development server at `http://localhost:5173/` (or another port if 5173 is in use).
-
-## Building for Production
-
-To build the project for production:
+4. Build for production
 
 ```bash
 npm run build
 ```
 
-This will create a `dist` folder with the production-ready files.
-
-## Preview Production Build
-
-To preview the production build locally:
-
-```bash
-npm run preview
-```
-
 ## Technologies Used
 
-- React 19
+- React
 - Vite
-- CSS3 (with custom properties/variables)
-- Responsive Design
+- CSS Modules
+- JavaScript
 
 ## License
 
-MIT
+This project is licensed under the MIT License.
 
 ## Contact
 
