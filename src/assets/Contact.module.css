@@ -100,7 +100,7 @@
   .modalContent {
     background: rgba(30, 30, 30, 0.95);
     border-radius: 15px;
-    box-shadow: 0 0 25px rgba(0, 230, 118, 0.5);
+    box-shadow: 0 0 25px rgba(161, 0, 230, 0.5);
     color: var(--text-color);
     padding: 40px;
     text-align: center;
@@ -191,7 +191,7 @@
     }
     
     .card {
-      width: 130px;
+      width: 150px;
       padding: 15px;
     }
     
@@ -209,7 +209,7 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #004d40 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #21004d 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -223,4 +223,4 @@
     font-weight: bold;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
-  
+   

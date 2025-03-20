@@ -7,6 +7,16 @@ const CustomScrollbar = () => {
   const [showTooltip, setShowTooltip] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop =
@@ -50,24 +60,25 @@ const CustomScrollbar = () => {
         <div 
           className={`${styles.navLink} ${activeSection === "home" ? styles.active : ""}`}
           onClick={() => scrollToSection("home")}
+          onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
         >
-          Home
+          {isHovering ? "172.0.0.0" : "Home"}
         </div>
         <div 
           className={`${styles.navLink} ${activeSection === "features" ? styles.active : ""}`}
-          onClick={() => scrollToSection("features")}
+          onClick={() => scrollToSection("projects")}
         >
           Projects
         </div>
         <div 
           className={`${styles.navLink} ${activeSection === "open-source" ? styles.active : ""}`}
-          onClick={() => scrollToSection("open-source")}
+          onClick={() => scrollToSection("Team")}
         >
           Team
         </div>
         <div 
           className={`${styles.navLink} ${activeSection === "pricing" ? styles.active : ""}`}
-          onClick={() => scrollToSection("pricing")}
+          onClick={() => scrollToSection("contact")}
         >
           Contact
         </div>

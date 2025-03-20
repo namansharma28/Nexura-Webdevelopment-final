@@ -3,6 +3,43 @@ import '../assets/Homepage.css';
 import Switch from './LightMode';
 import CustomScrollbar from './CustomScrollbar';
 import Contact from './Contact';
+import ProjectCard from './ProjectCard';
+import project1Video from '/projects/project1.mp4';
+import project2Video from '/projects/project2.mp4';
+import Dropdown from './Team';
+
+// Add this projects data array before the Homepage component
+const projectsData = [
+  {
+    cardTitle: "Project 1",
+    cardDescription: "lorem ipsum",
+    title: "jhsdvahefj,wbefj.ewf",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, nesciunt accusantium repellendus nobis provident reprehenderit aliquam, soluta voluptatem magnam excepturi id, architecto incidunt sequi amet dicta veniam qui sit molestiae nihil minus neque cumque temporibus. Corporis dicta iure labore, provident ipsa est, impedit adipisci consequuntur perferendis quaerat dolore libero possimus.",
+    videoSrc: project1Video
+  },
+  {
+    cardTitle: "Project 2",
+    cardDescription: "lorem ipsum",
+    title: "Nike",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rem, quaerat magni dolorem repellat magnam aperiam exercitationem amet! Blanditiis molestias assumenda distinctio quia saepe libero possimus cumque explicabo ullam! Recusandae odio, quos laboriosam molestiae vero harum ipsam cupiditate quas tempora doloremque ad architecto quam saepe ducimus voluptatum adipisci nihil voluptas!",
+    videoSrc: project2Video
+  },
+  {
+    cardTitle: "Project 2",
+    cardDescription: "lorem ipsum",
+    title: "Nike",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rem, quaerat magni dolorem repellat magnam aperiam exercitationem amet! Blanditiis molestias assumenda distinctio quia saepe libero possimus cumque explicabo ullam! Recusandae odio, quos laboriosam molestiae vero harum ipsam cupiditate quas tempora doloremque ad architecto quam saepe ducimus voluptatum adipisci nihil voluptas!",
+    videoSrc: project2Video
+  },
+  {
+    cardTitle: "Project 2",
+    cardDescription: "lorem ipsum",
+    title: "Nike",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rem, quaerat magni dolorem repellat magnam aperiam exercitationem amet! Blanditiis molestias assumenda distinctio quia saepe libero possimus cumque explicabo ullam! Recusandae odio, quos laboriosam molestiae vero harum ipsam cupiditate quas tempora doloremque ad architecto quam saepe ducimus voluptatum adipisci nihil voluptas!",
+    videoSrc: project2Video
+  },
+  // Add more projects as needed
+];
 
 const Homepage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -89,29 +126,6 @@ const Homepage = () => {
         <div className="scroll-progress-bar" style={progressBarStyle}></div>
       </div>
       
-      {/* Navigation Bar - Commented out as requested */}
-      {/* 
-      <nav className="navbar">
-        <div className="logo">
-          <h1>Nexura.Code</h1>
-        </div>
-        <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <ul>
-           <li> <a href="#product" className='hover-text'>Home</a></li>
-            <li><a href="#features">Projects</a></li>
-            <li><a href="#open-source">Team</a></li>
-            <li><a href="#pricing">Contact us</a></li>
-            <Switch></Switch>
-          </ul>
-        </div>
-        <div className="hamburger" onClick={toggleMenu}>
-          <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
-          <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
-          <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
-        </div>
-      </nav>
-      */}
-
       {/* Hero Section */}
       <section id="home" className="hero">
         <div className="laptop-container" ref={laptopContainerRef} style={laptopStyle}>
@@ -169,7 +183,7 @@ const Homepage = () => {
         {/* Scroll Down Indicator */}
         <div className={`scroll-down-indicator ${scrollProgress > 0.1 ? 'fade-out' : ''}`}>
           <div className="scroll-arrow"></div>
-          <div className="scroll-text">Scroll to Zoom</div>
+          <div className="scroll-text">Scroll to Fetch</div>
         </div>
       </section>
 
@@ -177,6 +191,7 @@ const Homepage = () => {
       <section id="features" className="features">
         <h2>WHY US?</h2>
         <div className="features-container">
+          
           <div className="feature-card">
             <div className="feature-icon">🚀</div>
             <h3>Mentorship That Matters</h3>
@@ -240,29 +255,25 @@ const Homepage = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="services">
-        <h2> Our Brag-Worthy Projects</h2>
+      <section id="projects" className="services">
+        <h2>Our Brag-Worthy Projects</h2>
         <div className="services-container">
-          <div className="service-card">
-            <h3>Free Tier</h3>
-            <p>Basic AI assistance for individual developers. Perfect for getting started.</p>
-          </div>
-          <div className="service-card">
-            <h3>Pro</h3>
-            <p>Advanced features for professional developers with higher usage limits.</p>
-          </div>
-          <div className="service-card">
-            <h3>Team</h3>
-            <p>Collaborative features for development teams with shared resources.</p>
-          </div>
-          <div className="service-card">
-            <h3>Enterprise</h3>
-            <p>Custom solutions for large organizations with dedicated support.</p>
-          </div>
+          {projectsData.map((project, index) => (
+            <ProjectCard 
+              key={index}
+              cardTitle={project.cardTitle}
+              cardDescription={project.cardDescription}
+              title={project.title}
+              description={project.description}
+              videoSrc={project.videoSrc}
+            />
+          ))}
         </div>
       </section>
-
-      {/* Contact Section - Removed built-in contact section */}
+      <section id="Team" className="services">
+        <h2>Brains Behind the Code</h2>
+      <Dropdown />
+      </section>
       <Contact />
 
       {/* Footer */}
@@ -279,7 +290,7 @@ const Homepage = () => {
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Projects</a></li>
                 <li><a href="#open-source">About Us</a></li>
-                <li><a href="#pricing">Team</a></li>
+                <li><a href="#Team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
             </div>

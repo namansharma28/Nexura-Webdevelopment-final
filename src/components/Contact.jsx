@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styles from "../assets/Contact.module.css";
 import PS1 from "../../public/PS1.jpg";
 import NamanSharma from "../../public/NamanSharma.jpg";
-import PS0 from "../../public/PS0.jpg";
+import PS0 from "../../public/Sudele0.jpg";
+import Sir from "/Shubhanshu.jpg";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -74,13 +75,7 @@ const Contact = () => {
               <div className={styles.card}>
                 <img src={PS1} alt="Prakhar sahu" className={styles.cardImage} />
                 <h4>Prakhar sahu</h4>
-                <p>The badass lead</p>
-              </div>
-
-              <div className={styles.card}>
-                <img src={PS0} alt="Prakhar Sudele" className={styles.cardImage} />
-                <h4>Prakhar Sudele</h4>
-                <p>"Too good to write about myself"</p>
+                <p>The badass lead<br />(The Witty Guy)</p>
               </div>
 
               <div className={styles.card}>
@@ -88,10 +83,16 @@ const Contact = () => {
                 <h4>Naman Sharma</h4>
                 <p>The Kool guy</p>
               </div>
+              <div className={styles.card}>
+                <img src={PS0} alt="Prakhar Sudele" className={styles.cardImage} />
+                <h4>Prakhar Sudele</h4>
+                <p>"Too good to write about myself"</p>
+              </div>
+
 
               <div className={styles.card}>
                 <img 
-                  src={`${window.location.origin}/Shubhanshu Choudhary .jpg`}
+                  src={Sir}
                   alt="Shubhanshu Choudhary" 
                   className={styles.cardImage}
                   onError={(e) => {
@@ -101,9 +102,8 @@ const Contact = () => {
                   }}
                 />
                 <h4>Shubhanshu Choudhary</h4>
-                <p>The DevOps Guru</p>
+                <p>Sabke Sir</p>
               </div>
-
             </div>
             <button className={styles.closeBtn} onClick={() => setShowEasterEgg(false)}>Close</button>
           </div>

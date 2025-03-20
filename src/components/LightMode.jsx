@@ -43,7 +43,7 @@ const Switch = () => {
             </label>
 
             {showPopup && (
-                <Popup>💡 Light attracts Bugs!<br />So This isn't a bug,<br/>it's a feature!!</Popup>
+                <Popup>💡 Light attracts Bugs!<br />Keep it Dark!?</Popup>
             )}
         </StyledWrapper>
     );
@@ -145,12 +145,29 @@ const StyledWrapper = styled.div`
   .switch input:checked ~ .slider .cloud {
     opacity: 1;
   }
+  @media (max-width: 425px) {
+    .switch {
+      height: 1.5em;
+      width: 3em;
+      margin-left: -15px;
+      z-index: 1000;
+    }
+    .star {
+    height: 2.5px;
+    width: 2.5px;
+    }
+    .slider:before {
+    height: 0.8em;
+    width: 0.8em;
+    bottom: 0.4em;
+    }
+  }
 `;
 
 const Popup = styled.div`
   position: absolute;
   top: 3rem;
-  left: 50%;
+  left: 0%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
@@ -160,6 +177,7 @@ const Popup = styled.div`
   white-space: nowrap;
   opacity: 1;
   transition: opacity 1s ease-in-out;
+  z-index: 99999999;
 `;
 
 export default Switch;
