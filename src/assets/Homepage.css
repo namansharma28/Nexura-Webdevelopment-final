@@ -433,17 +433,19 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   height: 100%;
-  width: 80%;
   background-color: var(--primary-color);
   border-radius: 3px;
-  animation: progress 2s ease-in-out infinite;
+  /* animation: progress 4s ease-in-out infinite; */
   box-shadow: 0 0 10px rgba(161, 0, 230, 0.5);
 }
 
-@keyframes progress {
+/* @keyframes progress {
   0% { width: 0; }
-  100% { width: 80%; }
-}
+  25% { width: 25%; }
+  50% { width: 50% }
+  75% { width: 75% }
+  100% {width: 100%}
+} */
 
 .experience-boost {
   color: var(--primary-color);
