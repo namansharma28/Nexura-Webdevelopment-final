@@ -33,14 +33,21 @@ const DropDown = () => {
       name2: "Vaidika Purohit",
     },
     {
+      image1: Shubhanshu,
+      name1: "Shubhanshu",
+      image2: Yamya,
+      name2: "Yamya Patel",
+    },
+    {
       image1: ishika,
       name1: "Ishika Purohit",
       image2: "",
       name2: "Your Spot?",
     },
+    
   ]
   return (
-    <div className={styles.dropdown}>
+    <div className={styles.dropdown} id="team">
       <div className={styles.mainMembers}>
       <TeamMember 
             image1= {Astha}
@@ -60,12 +67,7 @@ const DropDown = () => {
             image2= {Sudele}
             name2= "Prakhar Sudele" 
           />  
-          <TeamMember 
-            image1={Shubhanshu} 
-            name1="Shubhanshu" 
-            image2={Yamya}
-            name2="Yamya Patel"
-          />  
+           
           </div>
           <button
         className={styles.button}
@@ -84,8 +86,9 @@ const DropDown = () => {
                   image2={member.image2}
                   name2={member.name2}
                 />
+                
               ))}
-              {/* Add more members as needed */}
+             {/* add more people here if needed  */}
             </div>
           )}
     </div>

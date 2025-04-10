@@ -383,19 +383,16 @@ const Homepage = () => {
                 <li>
                   <a href="#">UI/UX Team</a>
                 </li>
-                <li>
-                  <a href="#">Community</a>
-                </li>
               </ul>
             </div>
             <div className="footer-section">
               <h3>Connect</h3>
               <ul className="social-links">
                 <li>
-                  <a href="#">GitHub</a>
+                  <a href="https://github.com/NexuraRGPV">GitHub</a>
                 </li>
                 <li>
-                  <a href="#">Instagram</a>
+                  <a href="https://www.instagram.com/nexura_rgpv/">Instagram</a>
                 </li>
                 <li>
                   <a href="#">LinkedIn</a>

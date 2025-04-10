@@ -62,7 +62,7 @@ const CustomScrollbar = () => {
           onClick={() => scrollToSection("home")}
           onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
         >
-          {isHovering ? "172.0.0.0" : "Home"}
+          {isHovering ? "127.0.0.1" : "Home"}
         </div>
         <div 
           className={`${styles.navLink} ${activeSection === "features" ? styles.active : ""}`}
