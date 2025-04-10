@@ -147,8 +147,8 @@ const StyledWrapper = styled.div`
   }
   @media (max-width: 425px) {
     .switch {
-      height: 1.5em;
-      width: 3em;
+      height: 1em;
+      width: 2em;
       margin-left: -15px;
       z-index: 1000;
     }
