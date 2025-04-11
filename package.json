@@ -1,5 +1,6 @@
 {
-  "name": "homepage",
+  "name": "nexura-webdevelopment",
+  "homepage": "https://namansharma28.github.io/Nexura-Webdevelopment-final/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +9,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "deploy": "gh-pages -d dist",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
   },
   "dependencies": {
     "react": "^19.0.0",
