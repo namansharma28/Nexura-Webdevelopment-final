@@ -305,7 +305,7 @@ const Homepage = () => {
             </p>
           </div>
           <div className="service-card">
-            <h3>UI/UX Design</h3>
+            <h3>Website Designing</h3>
             <p>
               Create visually stunning and user-friendly interfaces with our
               dedicated design team.
@@ -381,7 +381,7 @@ const Homepage = () => {
                   <a href="#">Join Us</a>
                 </li>
                 <li>
-                  <a href="#">UI/UX Team</a>
+                  <a href="#">Website Designing Team</a>
                 </li>
               </ul>
             </div>

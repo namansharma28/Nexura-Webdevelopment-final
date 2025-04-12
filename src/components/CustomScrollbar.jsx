@@ -8,6 +8,7 @@ const CustomScrollbar = () => {
   const [activeSection, setActiveSection] = useState("home");
 
   const [isHovering, setIsHovering] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMouseEnter = () => {
     setIsHovering(true);
@@ -52,14 +53,24 @@ const CustomScrollbar = () => {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className={styles.navContainer}>
       <div className={styles.logo}>Nexura.Code</div>
       
-      <div className={styles.navLinks}>
+      <div className={`${styles.hamburger} ${isMenuOpen ? styles.active : ""}`} onClick={toggleMenu}>
+        <div className={styles.bar}></div>
+        <div className={styles.bar}></div>
+        <div className={styles.bar}></div>
+      </div>
+
+      <div className={`${styles.navLinks} ${isMenuOpen ? styles.active : ""}`}>
         <div 
           className={`${styles.navLink} ${activeSection === "home" ? styles.active : ""}`}
-          onClick={() => scrollToSection("home")}
+          onClick={() => { scrollToSection("home"); setIsMenuOpen(false); }}
           onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
         >
           {isHovering ? "127.0.0.1" : "Home"}

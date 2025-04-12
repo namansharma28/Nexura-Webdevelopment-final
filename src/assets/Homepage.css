@@ -105,9 +105,22 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: var(--glow-effect);
 }
 
+/* Hamburger Styles */
 .hamburger {
-  display: none;
+  display: none; /* Initially hidden */
   cursor: pointer;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0; /* Hide middle bar */
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg); /* Rotate top bar */
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg); /* Rotate bottom bar */
 }
 
 .bar {
@@ -1015,24 +1028,24 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
+    display: block; /* Show hamburger on small screens */
   }
   
   .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Hide middle bar */
   }
   
   .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg); /* Rotate top bar */
   }
   
   .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg); /* Rotate bottom bar */
   }
   
   .nav-links {
     position: fixed;
-    left: -100%;
+    left: -100%; /* Hide off-screen */
     top: 70px;
     gap: 0;
     flex-direction: column;
@@ -1046,7 +1059,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .nav-links.active {
-    left: 0;
+    left: 0; /* Show when active */
   }
   
   .nav-links ul {
@@ -1059,7 +1072,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .laptop-frame {
-    max-width: 90%;
+    width: 100%;
   }
   
   .laptop-screen::before,
@@ -1068,7 +1081,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .laptop-header {
-    padding: 15px;
+    padding: 10px;
   }
   
   .laptop-nav {
@@ -1080,11 +1093,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .hero-content h1 {
-    font-size: 24px;
+    font-size: 20px;
   }
   
   .hero-content h1 span {
-    font-size: 16px;
+    font-size: 10px;
   }
   
   .video-background video {
@@ -1106,6 +1119,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .scroll-text {
-    font-size: 12px;
+    font-size: 8px;
   }
+  body {
+    padding: 0 1.5rem;
+  } 
 } 
