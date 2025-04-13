@@ -102,6 +102,13 @@
     .modalContent {
       padding: 25px;
     }
+    .contact h2 {
+      font-size: 28px;
+    }
+    .formGroup input,
+  .formGroup textarea {
+    font-size: 14px;
+  }
   }
   
   .avatarFallback {

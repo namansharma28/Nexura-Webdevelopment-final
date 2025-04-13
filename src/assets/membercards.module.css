@@ -101,3 +101,15 @@
   opacity: 1;
   
 }
+
+@media (max-width: 768px) {
+  .card1, .card2 {
+    width: 150px; 
+    height: 150px; 
+  }
+  
+  .card1 h4, .card2 h4 {
+    font-size: 0.8rem;
+    top: 2rem;
+  }
+}
