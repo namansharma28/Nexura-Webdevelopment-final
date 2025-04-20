@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 const ProjectCard = ({ 
     title, 
-    description, 
+    author, 
+    thumbnail,
     videoSrc, 
     cardTitle, 
     cardDescription 
@@ -21,6 +22,7 @@ const ProjectCard = ({
     return (
         <>
             <div className="service-card" onClick={handleCardClick}>
+                <img src={thumbnail} alt="Thumbnail" className="thumbnail" />
                 <h3>{cardTitle}</h3>
                 <p>{cardDescription}</p>
             </div>
@@ -38,9 +40,7 @@ const ProjectCard = ({
                         <div className="video-overlay-content">
                             <h2>{title}</h2>
                             <div className="modal-footer">
-                                <p className="project-description">
-                                    {description}
-                                </p>
+                                <p>{author}</p>
                             </div>
                         </div>
                         <video 

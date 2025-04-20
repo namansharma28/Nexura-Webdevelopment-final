@@ -1110,3 +1110,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
   }
 }
+.thumbnail {
+  width: 100%;
+  height: auto;
+  padding : -1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}

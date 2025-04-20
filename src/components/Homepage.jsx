@@ -6,42 +6,38 @@ import Contact from "./Contact";
 import ProjectCard from "./ProjectCard";
 import project1Video from "/projects/project1.mp4";
 import project2Video from "/projects/project2.mp4";
+import project3Video from "/projects/project3.mp4";
 import Dropdown from "./Team";
+import project1thumbnail from "/projectThumbnails/project1.png";
+import project2thumbnail from "/projectThumbnails/project2.png";
+import project3thumbnail from "/projectThumbnails/project3.png";
 
 // Add this projects data array before the Homepage component
 const projectsData = [
   {
-    cardTitle: "Project 1",
-    cardDescription: "lorem ipsum",
-    title: "jhsdvahefj,wbefj.ewf",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, nesciunt accusantium repellendus nobis provident reprehenderit aliquam, soluta voluptatem magnam excepturi id, architecto incidunt sequi amet dicta veniam qui sit molestiae nihil minus neque cumque temporibus. Corporis dicta iure labore, provident ipsa est, impedit adipisci consequuntur perferendis quaerat dolore libero possimus.",
+    cardTitle: "Shoes Website",
+    thumbnail: project1thumbnail,
+    cardDescription: "Landing page for a shoes website",
+    title: "A shoes website",
+    author: "",
     videoSrc: project1Video,
   },
   {
-    cardTitle: "Project 2",
-    cardDescription: "lorem ipsum",
+    cardTitle: "Nike Website",
+    cardDescription: "Landing page for a Nike website",
+    thumbnail: project2thumbnail,
     title: "Nike",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rem, quaerat magni dolorem repellat magnam aperiam exercitationem amet! Blanditiis molestias assumenda distinctio quia saepe libero possimus cumque explicabo ullam! Recusandae odio, quos laboriosam molestiae vero harum ipsam cupiditate quas tempora doloremque ad architecto quam saepe ducimus voluptatum adipisci nihil voluptas!",
     videoSrc: project2Video,
   },
   {
-    cardTitle: "Project 2",
-    cardDescription: "lorem ipsum",
-    title: "Nike",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rem, quaerat magni dolorem repellat magnam aperiam exercitationem amet! Blanditiis molestias assumenda distinctio quia saepe libero possimus cumque explicabo ullam! Recusandae odio, quos laboriosam molestiae vero harum ipsam cupiditate quas tempora doloremque ad architecto quam saepe ducimus voluptatum adipisci nihil voluptas!",
-    videoSrc: project2Video,
+    cardTitle: "E-commerce Website",
+    cardDescription: "A full stack e-commerce website",
+    title: "E-commerce",
+    author: "Made by Naman Sharma",
+    videoSrc: project3Video,
+    thumbnail: project3thumbnail,
   },
-  {
-    cardTitle: "Project 2",
-    cardDescription: "lorem ipsum",
-    title: "Nike",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae rem, quaerat magni dolorem repellat magnam aperiam exercitationem amet! Blanditiis molestias assumenda distinctio quia saepe libero possimus cumque explicabo ullam! Recusandae odio, quos laboriosam molestiae vero harum ipsam cupiditate quas tempora doloremque ad architecto quam saepe ducimus voluptatum adipisci nihil voluptas!",
-    videoSrc: project2Video,
-  },
+  
   // Add more projects as needed
 ];
 
@@ -323,16 +319,18 @@ const Homepage = () => {
 
       {/* Pricing Section */}
       <section id="projects" className="services">
-        <h2>Our Brag-Worthy Projects</h2>
+        <h2>Our Projects</h2>
         <div className="services-container">
           {projectsData.map((project, index) => (
             <ProjectCard
               key={index}
               cardTitle={project.cardTitle}
               cardDescription={project.cardDescription}
+              thumbnail={project.thumbnail}
               title={project.title}
               description={project.description}
               videoSrc={project.videoSrc}
+              author={project.author}
             />
           ))}
         </div>
