@@ -339,14 +339,15 @@ const Homepage = () => {
         <h2>Brains Behind the Code</h2>
         <Dropdown />
       </section>
-      <Contact />
+      <section id="contactSection">
+        <Contact />
+      </section>
 
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
             <h2>Nexura</h2>
-            <p>Your AI partner in code creation</p>
           </div>
           <div className="footer-links">
             <div className="footer-section">
@@ -373,13 +374,10 @@ const Homepage = () => {
               <h3>Quick links</h3>
               <ul>
                 <li>
-                  <a href="#">Main Website</a>
+                  <a href="https://versal-nexura.vercel.app/">Main Website</a>
                 </li>
                 <li>
-                  <a href="#">Join Us</a>
-                </li>
-                <li>
-                  <a href="#">Website Designing Team</a>
+                  <a href="https://forms.gle/r98YMrmw8YpGf2vZ9#">Join Us</a>
                 </li>
               </ul>
             </div>
@@ -391,9 +389,6 @@ const Homepage = () => {
                 </li>
                 <li>
                   <a href="https://www.instagram.com/nexura_rgpv/">Instagram</a>
-                </li>
-                <li>
-                  <a href="#">LinkedIn</a>
                 </li>
               </ul>
             </div>
