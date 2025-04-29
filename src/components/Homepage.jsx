@@ -139,7 +139,16 @@ const Homepage = () => {
     return () => clearInterval(interval);
   }, []);
   const labelIndex = progress / 25; // For 0%, 25%, 50%, 75%, and 100%
+  useEffect(() => {
+    const scrollToSection = document.querySelector(".features");
+    const timeoutId = setTimeout(() => {
+      if (scrollToSection) {
+        scrollToSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 5000);
 
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
     <div className="homepage">
