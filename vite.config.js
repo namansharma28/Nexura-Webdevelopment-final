@@ -34,5 +34,9 @@ const copyVideoPlugin = () => {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), copyVideoPlugin()],
-  base: "/Nexura-Webdevelopment-final",
+  base: ["/Nexura-Webdevelopment-final", "/"],
+  build: {
+    assetsDir: "assets",
+    sourcemap: true,
+  },
 });
